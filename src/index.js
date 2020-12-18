@@ -22,7 +22,7 @@ export default function App() {
   console.log('App /')
 
   return (
-    <Canvas style={{ background: 'lightblue' }} camera={{ position: [5, 1, 71], fov: 60 }}>
+    <Canvas style={{ background: 'lightblue' }} camera={{ position: [5, 1, 1], fov: 60 }}>
       <Suspense fallback={null}>
         <Physics gravity={[0, -5, 0]}>
           <Ground />
