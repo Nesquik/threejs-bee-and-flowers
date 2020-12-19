@@ -25,6 +25,11 @@ export default function Bee(props) {
   // let [beeRotation, useBeeRotation] = useState({ xRot: 0, yRot: 0, zRot: 0 })
 
   // const [groupRef] = useBox(() => ({ mass: 1, position: [0, 0, 0], ...props }))
+  console.log("beeProps");
+  console.log(props);
+  if(!props.beeRef.current) {
+    return null
+  }
   const { beeRef } = props
   // console.log('beeRef')
   // console.log(beeRef)

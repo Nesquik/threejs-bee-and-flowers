@@ -3,7 +3,7 @@ import React from 'react'
 import { useLoader } from 'react-three-fiber'
 import { usePlane } from '@react-three/cannon'
 import grass from '../assets/grass.jpeg'
-
+console.log(grass);
 const Ground = (props) => {
   const [ref] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], ...props }))
   const texture = useLoader(THREE.TextureLoader, grass)

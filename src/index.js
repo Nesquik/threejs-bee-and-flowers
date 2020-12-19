@@ -10,10 +10,12 @@ import { OrbitControls, OrthographicCamera, useCamera } from 'drei'
 import { Sky, PointerLockControls } from '@react-three/drei'
 
 import Ground from './world/Ground'
-import Player from './world/Player'
+import BeePlayer from './world/BeePlayer'
 
 import Plane from './world/Plane'
 import { OnKeyDown, OnKeyUp } from './world/KeyControls'
+
+import ErrorBoundary from './utils/ErrorBoundary'
 
 export default function App() {
   // const increasePopulation = useStore(state => state.increasePopulation)
@@ -26,7 +28,7 @@ export default function App() {
       <Suspense fallback={null}>
         <Physics gravity={[0, -5, 0]}>
           <Ground />
-          <Player />
+          <BeePlayer />
         </Physics>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />

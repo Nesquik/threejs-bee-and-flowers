@@ -49,6 +49,8 @@ const Player = (props) => {
   const { forward, backward, left, right, jump } = usePlayerControls()
   const { camera } = useThree()
   const velocity = useRef([0, 0, 0])
+  console.log("player beeref")
+  console.log(beeRef)
   useEffect(() => void api.velocity.subscribe((v) => (velocity.current = v)), [])
 
   useFrame(() => {
@@ -90,8 +92,12 @@ const Player = (props) => {
   })
   return (
     <>
-      <mesh ref={ref} />
-      <Bee beeRef={beeRef} />
+    { beeRef.current ? 
+      <>
+        <mesh ref={ref} />
+        <Bee beeRef={beeRef} />
+      </>
+     : null }
     </>
   )
 }
